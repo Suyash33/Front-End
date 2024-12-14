@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Date and Time</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #time-display {
+            font-size: 2rem;
+            margin: 1rem;
+        }
+        button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Current Date and Time</h1>
+    <div id="time-display"></div>
+    <button onclick="refreshTime()">Refresh Time</button>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleString();
+            document.getElementById('time-display').innerText = timeString;
+        }
+
+        function refreshTime() {
+            updateTime();
+        }
+
+        // Refresh time every second
+        setInterval(updateTime, 1000);
+
+        // Initialize time display
+        updateTime();
+    </script>
+</body>
+</html>
